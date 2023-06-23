@@ -1,0 +1,40 @@
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Hello 
+{
+	public static void main(String args[])
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\exam2\\Desktop\\L21CS194\\chromedriver_win32\\chromedriver.exe");
+		// Create a new instance of the Chrome driver
+        WebDriver driver = new ChromeDriver();
+       
+        // Navigate to a web page
+        driver.get("https://www.google.com");
+//        driver.navigate().to("https://www.testandquiz.com/selenium/testing.html");  
+        //getting the title 
+//        String title = driver.getTitle();
+//        System.out.println(title);
+//        driver.manage().window().maximize();
+        // Launch Website    
+        driver.navigate().to("http://www.yahoo.com");     
+
+        //Click on the Link Text using click() command    
+        driver.findElement(By.linkText("This is a Link")).click();  
+
+        //Go back to Home Page  
+        driver.navigate().back();   
+
+        //Go forward to Registration page  
+        driver.navigate().forward();  
+
+        // Go back to Home page  
+        driver.navigate().to("https://www.testandquiz.com/selenium/testing.html");  
+
+        //Refresh browser  
+        driver.navigate().refresh();  
+    
+        //Closing browser  
+        driver.close();   
+	}
+}

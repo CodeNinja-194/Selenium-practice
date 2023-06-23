@@ -1,0 +1,39 @@
+package Main;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sample 
+{
+	public static void main(String args[])
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\exam2\\Desktop\\L21CS194\\chromedriver_win32\\chromedriver.exe");
+		// Create a new instance of the Chrome driver
+        WebDriver driver = new ChromeDriver();
+     // Maximize the browser
+        driver.manage().window().maximize();
+    
+        // Launch Website
+        driver.get("https://www.flipkart.com/");
+        
+        	//Handling the alert box 
+      		//Click on the “Generate Alert Box” button  
+      		driver.findElement(By.linkText("Generate Alert Box")).click();  
+
+      		//Using Alert class to first switch the focus to the alert box  
+      		Alert alert = driver.switchTo().alert();  
+
+      		//the accept() method is used to accept the alert box  
+      		alert.accept();  
+
+      		//Handling the confirm box  
+      		//Click on the “Generate Confirm Box” button  
+      		driver.findElement(By.linkText("Generate Confirm Box")).click(); 
+
+      		Alert confirmBox = (Alert) driver.switchTo().alert();  
+           		
+      		//dismiss() command is used to dismiss the confirm box  
+      		((Alert) confirmBox).dismiss(); 
+      		//Similarly, accept() can be used to accept the confirm box 
+	}
+}

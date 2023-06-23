@@ -1,0 +1,62 @@
+package Main;
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.Alert;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import org.openqa.selenium.support.ui.Wait;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+class Alerts {
+
+    public static void main(String[] args) {
+
+    	System.setProperty("webdriver.chrome.driver","C:\\Users\\y20cs26\\Desktop\\Browser\\chromedriver.exe"); 
+
+        WebDriver driver = new ChromeDriver();
+
+
+
+        driver.get("https://selenium.dev");
+
+       
+
+       
+
+       driver.getTitle();
+
+     
+
+       driver.findElement(By.linkText("See an example alert")).click();
+
+
+
+       //Wait for the alert to be displayed and store it in a variable
+
+       Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+
+
+
+       //Store the alert text in a variable
+
+       String text = alert.getText();
+
+
+
+       //Press the OK button
+
+       alert.accept();
+
+         
+
+       
+
+       }
+
+}

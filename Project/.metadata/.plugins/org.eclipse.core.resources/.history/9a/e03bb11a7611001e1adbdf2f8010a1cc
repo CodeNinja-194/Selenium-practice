@@ -1,0 +1,29 @@
+package Main;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sample 
+{
+	public static void main(String args[])
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\exam2\\Desktop\\L21CS194\\chromedriver_win32\\chromedriver.exe");
+		// Create a new instance of the Chrome driver
+        WebDriver driver = new ChromeDriver();
+       
+        driver.get("https://demo.guru99.com/test/delete_customer.php");			
+		
+	      	
+      //Click the link to activate the alert
+        driver.findElement(By.linkText("See an example alert")).click();
+
+//        //Wait for the alert to be displayed and store it in a variable
+        Alert alert = driver.switchTo().alert();
+
+        //Store the alert text in a variable
+        String text = alert.getText();
+
+        //Press the OK button
+        alert.accept();
+	}
+}

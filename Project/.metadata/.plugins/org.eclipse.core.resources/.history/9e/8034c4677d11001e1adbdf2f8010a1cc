@@ -1,0 +1,38 @@
+package Main;
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.Alert;
+
+//import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//
+//import org.openqa.selenium.support.ui.Wait;
+//
+//import org.openqa.selenium.support.ui.WebDriverWait;
+
+class Alerts
+{
+
+    public static void main(String[] args) {
+
+    	System.setProperty("webdriver.chrome.driver", "C:\\Users\\exam2\\Desktop\\L21CS194\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("file:///C:/Users/exam2/Desktop/L21CS194/index.html");
+        try {
+            // switching to the alert
+            // if the alert is missing, a NoAlertPresentException will be thrown
+            Alert alert = driver.switchTo().alert();
+
+            // proving the prompt alert with the "Maria Williams" string
+            driver.switchTo().alert().sendKeys("Maria Williams");
+
+            // accepting the alert
+            alert.accept();
+        } catch (NoAlertPresentException e) {
+            System.err.println("There are no alerts in the page!");
+        }
+       }
+}

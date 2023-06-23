@@ -1,0 +1,17 @@
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Hello2 
+{
+	 String columnXpath = "/html/body/table/tbody/tr[1]/th";
+	    String rowXpath = "/html/body/table/tbody/tr/td[1]";
+	public static void main(String args[])
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\exam2\\Desktop\\L21CS194\\chromedriver_win32\\chromedriver.exe");
+		// Create a new instance of the Chrome driver
+        WebDriver driver = new ChromeDriver();
+       
+        // Navigate to a web page
+       
+	}
+}

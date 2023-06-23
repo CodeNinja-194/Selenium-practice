@@ -1,0 +1,33 @@
+package Main;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sample 
+{
+	public static void main(String args[])
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\exam2\\Desktop\\L21CS194\\chromedriver_win32\\chromedriver.exe");
+		// Create a new instance of the Chrome driver
+        WebDriver driver = new ChromeDriver();
+        // Maximize the browser
+        driver.manage().window().maximize();
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        // identify element
+        WebElement c=driver.findElement(By.xpath("//button[text()='Click for JS Prompt']"));
+        c.click();
+        //shift to alert
+        Alert a = driver.switchTo().alert();
+        //get alert text
+        String s = a.getText();
+        System.out.println("Alert text is: " + s);
+        //input text to alert
+        a.sendKeys("Selenium");
+        //dismiss alert
+        a.dismiss();
+        c.click();
+        //accept alert
+        a.accept();
+//        driver.quit();
+	}
+}
